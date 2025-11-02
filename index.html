@@ -1,812 +1,834 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'Poppins', Arial, sans-serif;
-        line-height: 1.6;
-        background-color: #f4f4f9;
-        color: #333;
-    }
-
-    header {
-        height: 100vh;
-        background-image: url(images/pexels-fauxels-3183150-1024x683.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    header h1 {
-        font-size: 100px;
-        margin-bottom: 10px;
-        background-color: #00438a8c;
-    }
-    
-    header i {
-        font-size: 20px;
-        margin-bottom: 10px;
-        font-family: 'Times New Roman', Times, serif;
-        background-color: #00438a8c;
-    }
-
-    header p {
-        font-size: 20px;
-        font-family: 'Times New Roman', Times, serif;
-        font-weight: 500;
-        color: white;
-
-    }
-    header h2{
-        color: rgb(255, 255, 255);
-        font-family: 'Times New Roman', Times, serif;
-        font-style: italic;
-        
-    }
-
-    .navbar {
-        display: flex;
-        justify-content: center;
-    }
-
-    nav {
-        position: fixed;
-        /* display: flex; */
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(1, 103, 212, 0.9);
-        padding: 10px 0;
-        /* text-align: center; */
-        /* align-items: center; */
-        z-index: 10;
-    }
-
-    nav a {
-        color: white;
-        margin: 0 15px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-        color: #ffdd40;
-    }
-
-    /* About Section */
-    .about {
-        padding: 50px 20px;
-        text-align: center;
-        background: linear-gradient(to right, #007bff, #00c6ff);
-        background-image: url('images/blue\ back.jpg'),
-            linear-gradient(to right, #007bff, #00c6ff);
-        background-repeat: repeat, no-repeat;
-        background-size: auto, cover;
-        color: #f4f4f9;
-    }
-
-    .about h2 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        color: #f4f4f9;
-    }
-
-    .about p {
-        max-width: 800px;
-        margin: 0 auto;
-        font-size: 1.2rem;
-        line-height: 1.8;
-        color: #ffffff;
-    }
-
-    /* Projects Section */
-    .projects {
-        padding: 50px 20px;
-        background: linear-gradient(to right, #007bff, #00c6ff);
-    }
-
-    .projects h2 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        color: #2600ff;
-        text-align: center;
-    }
-
-    .project-grid {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-
-        
-    }
-
-    .project {
-        width: 350px;
-        background: #f9f9f9;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        text-align: left;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .project img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
-
-    .project h3 {
-        padding: 15px;
-        font-size: 1.5rem;
-        color: #007bff;
-    }
-
-    .project p {
-        padding: 0 15px 15px;
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-
-    .testimonial-section {
-        text-align: center;
-        padding: 50px;
-        background-color: #f9f9f9;
-    }
-
-    .testimonial-section h2 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        color: #333;
-    }
-
-    .testimonials {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-    }
-
-    .testimonial {
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        padding: 20px;
-        max-width: 300px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .testimonial.visible {
-            opacity: 1;
-            transform: translateY(0);
+    <title>Cedar Academic Services - Academic Support & Research Assistance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00438a;
+            --primary-light: #007bff;
+            --primary-dark: #002064;
+            --secondary: #ffdd40;
+            --accent: #00c6ff;
+            --light: #f4f4f9;
+            --dark: #333;
+            --gray: #555;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
-    .testimonial:hover {
-        transform: translateY(-10px);
-    }
 
-    .testimonial img {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        margin-bottom: 15px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .testimonial p {
-        font-style: italic;
-        font-size: 1rem;
-        color: #555;
-        margin-bottom: 10px;
-    }
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
 
-    .testimonial h4 {
-        font-size: 1rem;
-        font-weight: bold;
-        color: #222;
-    }
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
 
-    .testimonials {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-    }
+        p {
+            margin-bottom: 1rem;
+        }
 
-    .meet {
-        padding: 50px 20px;
-        background: linear-gradient(to right, #007bff, #00c6ff);
-       
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .meet h2 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        color: #ffffff;
-        text-align: center;
-    }
-    
-    .cardte {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-    }
-    .testimonia {
-        background: #002064;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        padding: 20px;
-        max-width: 300px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        transition: transform 0.3s ease;
-    }
-    .testimonia:hover {
-        transform: translateY(-10px);
-    }
+        .section {
+            padding: 80px 0;
+        }
 
-    .testimonia img {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        margin-bottom: 15px;
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
 
-    }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-light);
+            border-radius: 2px;
+        }
 
-    .testimonia p {
-        font-style: italic;
-        font-size: 1rem;
-        color: #555;
-        margin-bottom: 10px;
-    }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
 
-    .testimonia h4 {
-        font-size: 1rem;
-        font-weight: bold;
-        color: #fff9f9;
-    }
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
 
-    .contact {
-        padding: 50px 20px;
-        background-color: #00438a;
-        color: white;
-        text-align: center;
-    }
+        .btn-accent {
+            background: var(--accent);
+            color: var(--dark);
+        }
 
-    .contact h2 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-    }
+        .btn-accent:hover {
+            background: #00b4e6;
+        }
 
-    .contact p {
-        font-size: 1.2rem;
-        margin: 10px 0;
-    }
+        /* Header */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 67, 138, 0.8), rgba(0, 67, 138, 0.7)), url(images/pexels-fauxels-3183150-1024x683.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
 
-    .contact a {
-        color: #ffdd40;
-        text-decoration: none;
-    }
+        .header-content {
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
 
-    .contact a:hover {
-        text-decoration: underline;
-    }
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
 
-    .contact img {
-        width: 100px;
-    }
+        .header-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            font-family: 'Times New Roman', Times, serif;
+        }
 
-    .vl {
-        border-left: 3px solid rgb(0, 55, 128);
-        height: 25px;
-    }
-    table {
-    width: 90%; /* Adjust width for better responsiveness */
-    max-width: 800px; /* Prevent it from becoming too wide */
-    margin: auto;
-    border-collapse: collapse;
-    background: white;
-    color: #333;
-    border: 2px solid #007bff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+        .header-content h2 {
+            font-size: 1.5rem;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
 
-th, td {
-    padding: 15px;
-    border: 2px solid #007bff;
-    text-align: center;
-}
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
 
-th {
-    background: #007bff;
-    color: white;
-}
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(1, 103, 212, 0.95);
+            padding: 15px 0;
+            z-index: 1000;
+            transition: var(--transition);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-tr:nth-child(even) {
-    background: #f2f2f2;
-}
+        nav.scrolled {
+            padding: 10px 0;
+            background: rgba(1, 103, 212, 0.98);
+        }
 
-tr:hover {
-    background: #ddd;
-}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.price {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #007bff;
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
 
-    /* Keyframes for sliding animation */
-    @keyframes slideIn {
-        from {
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(to right, var(--primary-light), var(--accent));
+            color: var(--white);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/blue back.jpg');
+            background-repeat: repeat;
+            opacity: 0.1;
+        }
+
+        .about-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            color: var(--white);
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
             opacity: 0;
-            transform: translateY(100px);
+            transform: translateY(20px);
         }
 
-        to {
+        .testimonial-card.visible {
             opacity: 1;
             transform: translateY(0);
         }
-    }
 
-    /* Apply animation to the testimonials */
-    .testimonial {
-        opacity: 0;
-        animation: slideIn 1s ease-in-out forwards;
-    }
-
-    /* Delay the animation for each testimonial */
-    .testimonial:nth-child(1) {
-        animation-delay: 0.2s;
-    }
-
-    .testimonial:nth-child(2) {
-        animation-delay: 0.4s;
-    }
-
-    .testimonial:nth-child(3) {
-        animation-delay: 0.6s;
-    }
-
-    .testimonial:nth-child(4) {
-        animation-delay: 0.8s;
-    }
-
-    .slide-in {
-        animation: slideIn 1s ease-in-out forwards;
-    }
-    
-    table {
-    width: 90%; /* Adjust width for better responsiveness */
-    max-width: 800px; /* Prevent it from becoming too wide */
-    margin: auto;
-    border-collapse: collapse;
-    background: white;
-    color: #333;
-    border: 2px solid #007bff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-th, td {
-    padding: 15px;
-    border: 2px solid #007bff;
-    text-align: center;
-}
-
-th {
-    background: #007bff;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background: #f2f2f2;
-}
-
-tr:hover {
-    background: #ddd;
-}
-
-.price {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #007bff;
-}
-        .pricing h1{
-            font-size: 2.5rem;
-        margin-bottom: 20px;
-        color: #007bff;
-        text-align: center;
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-    /* Responsive Styles */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 50px;
-        padding: 0 10px;
-    }
 
-    header p {
-        font-size: 16px;
-        padding: 0 10px;
-    }
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
 
-    .navbar {
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
 
-    nav a {
-        margin: 5px;
-    }
+        .testimonial-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
 
-    .about h2,
-    .projects h2,
-    .testimonial-section h2,
-    .meet h2,
-    .contact h2 {
-        font-size: 1.8rem;
-    }
+        .testimonial-info h4 {
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
 
-    .about p,
-    .projects p,
-    .testimonial p,
-    .contact p {
-        font-size: 1rem;
-    }
+        .testimonial-info p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin: 0;
+        }
 
-    .project {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+        /* Team Section */
+        .team {
+            background: linear-gradient(to right, var(--primary-light), var(--accent));
+            color: var(--white);
+        }
 
-    .project-grid {
-        flex-direction: column;
-        gap: 15px;
-    }
+        .team h2 {
+            color: var(--white);
+        }
 
-    .testimonials,
-    .cardte {
-        flex-direction: column;
-        gap: 20px;
-    }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
 
-    .testimonial,
-    .testimonia {
-        max-width: 90%;
-        margin: 0 auto;
-    }
+        .team-card {
+            background: var(--primary-dark);
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
 
-    .testimonial img,
-    .testimonia img {
-        width: 60px;
-        height: 60px;
-    }
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
 
-    .testimonial p,
-    .testimonia p {
-        font-size: 0.9rem;
-    }
+        .team-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 3px solid var(--accent);
+        }
 
-    .testimonial h4,
-    .testimonia h4 {
-        font-size: 1rem;
-    }
+        .team-card h4 {
+            color: var(--white);
+            margin-bottom: 10px;
+        }
 
-    .contact img {
-        width: 70px;
-    }
-    table {
-        width: 100%; /* Make it full width on smaller screens */
-        font-size: 14px; /* Reduce font size for better readability */
-    }
-    
-    th, td {
-        padding: 10px; /* Reduce padding */
-    }
-}
+        .team-card p {
+            color: #cccccc;
+            margin: 0;
+        }
 
-@media (max-width: 480px) {
-    nav {
-        flex-wrap: wrap;
-        padding: 10px;
-    }
+        /* Pricing Section */
+        .pricing {
+            background: var(--light);
+        }
 
-    nav a {
-        font-size: 0.9rem;
-    }
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
+        }
 
-    header h1 {
-        font-size: 40px;
-    }
+        .pricing-table th, .pricing-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
 
-    header p {
-        font-size: 14px;
-    }
+        .pricing-table th {
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+        }
 
-    .about p {
-        font-size: 0.9rem;
-        padding: 0 10px;
-    }
+        .pricing-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
 
-    .project h3 {
-        font-size: 1.2rem;
-    }
+        .pricing-table tr:hover {
+            background: #f0f0f0;
+        }
 
-    .project p {
-        font-size: 0.9rem;
-    }
+        .price {
+            font-weight: 700;
+            color: var(--primary);
+        }
 
-    .testimonial p,
-    .testimonia p {
-        font-size: 0.8rem;
-    }
+        /* Contact Section */
+        .contact {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
 
-    .contact h2 {
-        font-size: 1.5rem;
-    }
+        .contact h2 {
+            color: var(--white);
+        }
 
-    .contact p {
-        font-size: 0.9rem;
-    }
+        .contact-info {
+            margin-bottom: 30px;
+        }
 
-    .contact a {
-        font-size: 0.9rem;
-    }
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
 
-table {
-        display: block;
-        overflow-x: auto; /* Enable horizontal scrolling */
-        white-space: nowrap;
-    }
-    
-    th, td {
-        padding: 8px;
-        font-size: 12px; /* Further reduce font size for small screens */
-    }
-}
+        .contact-info a {
+            color: var(--secondary);
+            transition: var(--transition);
+        }
 
-</style>
+        .contact-info a:hover {
+            color: var(--white);
+        }
 
-<body>
-    <!-- header -->
-    <header id="header">
-        <h1>Cedar Academy Services</h1>
-        <p>Language Editing | Thesis Assistance | Plagiarism Services | Statistical Analysis | <i>GENOMICS</i> </p> 
-        <br>
-        <h2>Catering for academic needs <i>globally...</i></h2>
-    </header>
-    <!-- nav -->
-    <nav>
-        <div class="navbar">
-            <a href="#header">Home </a>
-            <div class="vl"></div>
-            <a href="#about">About </a>
-            <div class="vl"></div>
-            <a href="#projects">Services</a>
-            <div class="vl"></div>
-            <a href="#testimonials">Testimonials</a>
-            <div class="vl"></div>
-            <a href="#meet">Team</a>
-            <div class="vl"></div>
-            <a href="#pricing">Pricing</a>
-            <div class="vl"></div>
-            <a href="#contact">Contact</a>
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #25D366;
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .whatsapp-btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-links {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .header-content h1 {
+                font-size: 2.8rem;
+            }
             
-        </div>
+            .header-content p {
+                font-size: 1.1rem;
+            }
+        }
 
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 20px;
+                display: none;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 20px;
+            }
+            
+            .header-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .pricing-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header-content p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container navbar">
+            <a href="#header" class="logo">Cedar Academic</a>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-    
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-content">
+            <h1>Cedar Academy Services</h1>
+            <p>Language Editing | Thesis Assistance | Plagiarism Services | Statistical Analysis | <i>GENOMICS</i></p>
+            <h2>Catering for academic needs <i>globally...</i></h2>
+            <a href="#services" class="btn btn-accent">Explore Our Services</a>
+        </div>
+        <a href="#about" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </header>
 
     <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Us</h2>
-
-        <!-- <img src="images/GettyImages-1353372066 (1).webp" alt=""> -->
-        <p>
-            Cedar Academic Services is an academic and research services organization.
-            While CedarAcad started formally in 2023, work started in 2020 with 
-            research writing, editing and bioinformatics analysis.
-            The focus of this organization are disciplines in biomedical, life and social sciences. With working partners and mentors across many disciplines, we offer
-            various services including research assistance, statistical and
-            genomics data analysis.
-        </p>
-    </section>
-    <section id="projects" class="projects">
-        <h2>Our Services</h2>
-        <div class="project-grid">
-            <div class="project">
-                <img src="images/genn.jpg" alt="Project 3">
-                <h3>Genomics: </h3>
-                <p>We carry out NGS, metagenomics and other genomic analysis for students and researchers.</p>
-            </div>
-            <div class="project">
-                <img src="images/editing.jpg" alt="Project 1">
-                <h3>Language Editing: </h3>
-                <p>Our professional and vastly experienced English language experts will proofread and edit your academic document, after which an editorial certificate will be issued to you.
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <p>
+                    Cedar Academic Services is an academic and research services organization.
+                    While CedarAcad started formally in 2023, work started in 2020 with 
+                    research writing, editing and bioinformatics analysis.
+                    The focus of this organization are disciplines in biomedical, life and social sciences. With working partners and mentors across many disciplines, we offer
+                    various services including contract research(research assistant), statistical and
+                    genomics data analysis.
                 </p>
             </div>
-            <div class="project">
-                <img src="images/bil-researchAssistants.jpg" alt="Project 2">
-                <h3>Research assistance:</h3>
-                <p>We support with literature reviews, data collection, and
-                    research design.</p>
-            </div>
-            <div class="project">
-                <img src="images/sta.jpg" alt="Project 3">
-                <h3>Statistical analysis: </h3>
-                <p>We assist with statistical analysis, interpretation,
-                    and visualization.</p>
-            </div>
-            <div class="project">
-                <img src="images/publikasiilmiah.jpg" alt="Project 3">
-                <h3>Formatting and publication support:</h3>
-                <p> We help with formatting academic
-                    papers for publication.</p>
-            </div>
-            <div class="project">
-                <img src="images/ac.jpg" alt="Project 3">
-                <h3>Academic Integrity|Plagiarism Services: </h3>
-                <p>Using Turnitin, your document is scanned for plagiarism, and our staff paraphrases for you till an acceptable limit is reached. We also offer support for proper citation.</p>
-            </div>
-
         </div>
     </section>
-    <section id="testimonials" class="testimonials">
-        <div class="testimonial-section">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonials">
-                <div class="testimonial">
-                    <img src="images/Tomisin6.jpg" alt="Client 3">
 
-                    <p>I am incredibly grateful to Cedar Academic Services for their outstanding support with my
-                        metagenomic analysis. Their bioinformatics team delivered precise, high-quality interpretations
-                        that greatly enhanced the impact of my research. Their professionalism and attention to detail
-                        were instrumental in achieving the completion of my PhD thesis.</p>
-                    <h4> Oluwatomisin Akinsola. Bowen University, Iwo</h4>
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>Genomics</h3>
+                    <p>We carry out NGS, metagenomics and other genomic analysis for researchers.</p>
                 </div>
-                <div class="testimonial">
-                    <img src="images/WhatsApp Image 2025-01-02 at 5.49.12 PM (1).jpeg" alt="Client 3">
-
-                    <p>When it comes to similarity reportage, editorial services and fine tuning of
-                        your research work, cedar academic services gives cutting edge touch to your work. This is to
-                        say the least.</p>
-                    <h4>Dr. Sanni Abdulquadri Isah
-                        Resident, Federal Medical Center, Owo.</h4>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>Language Editing</h3>
+                    <p>Our professional and vastly experienced English language experts will proofread and edit your academic document, after which an editorial certificate will be issued to you.</p>
                 </div>
-                <div class="testimonial">
-                    <img src="images/WhatsApp Image 2024-12-07 at 3.53.47 PM.jpeg" alt="Client 1">
-                    <p>Cedar Academic Services was a breakthrough in my PhD biochemistry thesis defense. Their
-                        meticulous plagiarism checks ensured my work was original and polished, while their expert
-                        language refinement brought clarity and professionalism to my thesis. Affordable, reliable, and
-                        always available, they provided the support I needed during a critical time. Their dedication
-                        and expertise were truly instrumental to my success, and I highly recommend their services to
-                        any scholar seeking excellence.
-                    </p>
-                    <h4>Dr. E.O. Olopade - Adeleke University, Ede.</h4>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Contract research/Research Assistance</h3>
+                    <p>We support with research design, full research ,literature reviews, data collection, research design ,etc.</p>
                 </div>
-                <div class="testimonial">
-                    <img src="images/user-profile-icon-vector-avatar-600nw-2247726673.webp" alt="Client 3">
-
-                    <p>I am deeply grateful to Cedar Academic Services for their exceptional editing of my doctoral thesis. Their attention to detail, adherence to academic standards, and insightful suggestions greatly improved the clarity and quality of my work. I highly recommend their services to anyone seeking professional academic editing.</p>
-                    <h4>Dr. Adewojo A.A.
-                        Principal Librarian,
-                        NSPRI, Ilorin.</h4>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Statistical Analysis</h3>
+                    <p>We assist with statistical analysis, interpretation, and visualization.</p>
                 </div>
-                <div class="testimonial">
-                    <img src="images/WhatsApp Image 2024-12-07 at 3.53.48 PM.jpeg" alt="Client 2">
-                    <p>I received exceptional support from Cedar Academic Services' thesis assistance team. They not
-                        only provided top-notch language editing and plagiarism checking services but also offered
-                        valuable guidance throughout my thesis journey. I'm grateful for their expertise and
-                        professionalism.</p>
-                    <h4>Olalekan Fausat Folashade, Master of Public Health Student, Adeleke University, Ede, Osun State.
-                    </h4>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Formatting & Publication Support</h3>
+                    <p>We help with formatting academic papers for publication.</p>
                 </div>
-                <div class="testimonial">
-                    <img src="images/WhatsApp Image 2024-12-07 at 4.20.03 PM.jpeg" alt="Client 3">
-                    <p>I had a terrible research encounter with my Thesis work that almost led to quitting. Towards the
-                        brim of quitting, a colleague at work linked me with Cedar Academic Services'. This terminated
-                        the plague as the plagiarism check and editing services bailed me out. Their team assisted me
-                        beyond measure. Infact, I got more than what I requested for.</p>
-                    <h4>Oladimeji Ojo, MSc student, University of Ilorin</h4>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Academic Integrity | Plagiarism Services</h3>
+                    <p>Using Turnitin, your document is scanned for plagiarism, and our staff paraphrases for you till an acceptable limit is reached. We also offer support for proper citation.</p>
                 </div>
-                
-                <div class="testimonial">
-                    <img src="images/WhatsApp Image 2024-12-07 at 3.53.49 PM.jpeg" alt="Client 3">
-
-                    <p>I've found Cedar Academic Services' plagiarism checker to be a game-changer in my academic
-                        pursuits. Its exceptional accuracy and efficiency ensured the originality of my MSc project,
-                        giving me complete peace of mind. I wholeheartedly recommend Cedar Academic Services to anyone
-                        seeking a trustworthy plagiarism detection solution. Their outstanding service has been truly
-                        invaluable!</p>
-                    <h4> Makinde Ayoade Bright, Ph.D. Student, Adeleke University, Ede.</h4>
-                </div>
-                <div class="testimonial">
-                    <img src="images/WhatsApp Image 2025-01-02 at 5.49.13 PM.jpeg" alt="Client 3">
-
-                    <p>When I was a master student, I struggled with my editorial work and plagiarism check. But with the help of Cedar Academic Services, I was able to get excellent editorial service and expected plagiarism result.</p>
-                    <h4> Oduola Tolulope O., Masters Student, Adeleke University Ede, Osun State.</h4>
-                </div>
-                
-                
             </div>
         </div>
+    </section>
 
-    </section>
-    <section id="meet" class="meet">
-        <h2>Our Team</h2>
-        <div class="cardte">
-            <div class="testimonia">
-                <img src="images/Screenshot_20240624-185050.jpg" alt="Client 3">
-                <h4>
-                    C.E.O.
-                    <br>
-                    Favour Bamigboye 
-                    <br>
-                    Bio-informatician and Biomedical Scientist.</h4>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>I am incredibly grateful to Cedar Academic Services for their outstanding support with my
+                            metagenomic analysis. Their bioinformatics team delivered precise, high-quality interpretations
+                            that greatly enhanced the impact of my research.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/Tomisin6.jpg" alt="Oluwatomisin Akinsola" class="testimonial-img">
+                        <div class="testimonial-info">
+                            <h4>Oluwatomisin Akinsola</h4>
+                            <p>Bowen University, Iwo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>When it comes to similarity reportage, editorial services and fine tuning of
+                            your research work, cedar academic services gives cutting edge touch to your work. This is to
+                            say the least.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/WhatsApp Image 2025-01-02 at 5.49.12 PM (1).jpeg" alt="Dr. Sanni Abdulquadri Isah" class="testimonial-img">
+                        <div class="testimonial-info">
+                            <h4>Dr. Sanni Abdulquadri Isah</h4>
+                            <p>Federal Medical Center, Owo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Cedar Academic Services was a breakthrough in my PhD biochemistry thesis defense. Their
+                            meticulous plagiarism checks ensured my work was original and polished, while their expert
+                            language refinement brought clarity and professionalism to my thesis.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/WhatsApp Image 2024-12-07 at 3.53.47 PM.jpeg" alt="Dr. E.O. Olopade" class="testimonial-img">
+                        <div class="testimonial-info">
+                            <h4>Dr. E.O. Olopade</h4>
+                            <p>Adeleke University, Ede</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="testimonia">
-                <img src="images/team2.jpg" alt="Client 3">
-                <h4>
-                    C.O.O.
-                    <br>
-                    Oluwaseyi Eko
-                    <br>
-                    Biomedical Scientist.</h4>
-            </div>
-            <div class="testimonia">
-                <img src="images/team1.jpg" alt="Client 3">
-                <h4>
-                    Head, Statistical Analysis
-                    <br>
-                    Isaac Olowookere
-                    <br>
-                    Data Analyst.</h4>
-            </div>
-            <div class="testimonia">
-                <img src="images/dad.jpg" alt="Client 3">
-                <h4>
-                    Editor-in-Chief
-                    <br>
-                    Earnest Bamigboye
-                    <br>
-                    English Language Specialist.</h4>
-            </div>
-            
         </div>
-       
     </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section team">
+        <div class="container">
+            <h2 class="section-title">Our Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="images/Screenshot_20240624-185050.jpg" alt="Favour Bamigboye" class="team-img">
+                    <h4>Favour Bamigboye</h4>
+                    <p>C.E.O. | Biomedical Scientist and Research Specialist</p>
+                </div>
+                <div class="team-card">
+                    <img src="images/team2.jpg" alt="Oluwaseyi Eko" class="team-img">
+                    <h4>Oluwaseyi Eko</h4>
+                    <p>C.O.O. | Biomedical Scientist</p>
+                </div>
+                <div class="team-card">
+                    <img src="images/team1.jpg" alt="Isaac Olowookere" class="team-img">
+                    <h4>Isaac Olowookere</h4>
+                    <p>Head, Statistical Analysis | Data Analyst</p>
+                </div>
+                <div class="team-card">
+                    <img src="images/dad.jpg" alt="Earnest Bamigboye" class="team-img">
+                    <h4>Earnest Bamigboye</h4>
+                    <p>Editor-in-Chief | English Language Specialist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
     <section id="pricing" class="pricing"> 
-        <h1>Pricing </h1>
+        <h1>Pricing</h1>
         <table>
             <tr>
                 <th>Service</th>
@@ -833,7 +855,7 @@ table {
                 <td class="price">$20</td>
             </tr>
             <tr>
-                <td>Research Assistance</td>
+                <td>Contract Research</td>
                 <td class="price">-</td>
                 <td class="price">-</td>
                 <td class="price">Negotiable</td>
@@ -859,7 +881,11 @@ table {
             <!-- //////////////// -->
             <tr>
                 <th>Genomics</th>
-                
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
             <tr>
                 <td>NGS Analysis</td>
@@ -893,40 +919,104 @@ table {
                 <td class="price">$15</td>
                 <td class="price">$15</td>
             </tr>
+            <tr>
+                <td>Others</td>
+                <td class="price">Negotiable</td>
+                <td class="price">Negotiable</td>
+                <td class="price">Negotiable</td>
+                <td class="price">Negotiable</td>
+                <td class="price">Negotiable</td>
+            </tr>
         </table>
-    </section><br>
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:cedaracads@gmail.com">cedaracads@gmail.com</a></p>
-        <p>Contact us on Whatsapp:</p> <a href="https://wa.link/ieyp3u"><img src="images/whatt-removebg-preview.png"
-                alt=""></a>
     </section>
-</body>
 
-</html>
-<script>
-    // JavaScript to trigger animation on scroll
-    document.addEventListener("DOMContentLoaded", function () {
-    function fadeInOnScroll() {
-        let elements = document.querySelectorAll(".testimonial");
-        let windowHeight = window.innerHeight;
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:cedaracads@gmail.com">cedaracads@gmail.com</a></p>
+                <p>Reach out to us for a consultation</p>
+                <p>call: +2349154677341</p>
+            </div>
+            <a href="https://wa.link/bc8oer" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Contact on WhatsApp
+        
+            </a>
+        </div>
+    </section>
 
-        elements.forEach((element) => {
-            let position = element.getBoundingClientRect().top;
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="copyright">&copy; 2023 Cedar Academy Services. All rights reserved.</p>
+        </div>
+    </footer>
 
-            if (position < windowHeight - 100) {
-                element.classList.add("visible");
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
         });
-    }
+        
+        // Testimonial animation on scroll
+        document.addEventListener("DOMContentLoaded", function () {
+            function fadeInOnScroll() {
+                let elements = document.querySelectorAll(".testimonial-card");
+                let windowHeight = window.innerHeight;
 
-    // Run function when scrolling
-    window.addEventListener("scroll", fadeInOnScroll);
+                elements.forEach((element) => {
+                    let position = element.getBoundingClientRect().top;
 
-    // Run once to check elements already in view
-    fadeInOnScroll();
-});
+                    if (position < windowHeight - 100) {
+                        element.classList.add("visible");
+                    }
+                });
+            }
 
-
-
-</script>
+            window.addEventListener("scroll", fadeInOnScroll);
+            fadeInOnScroll();
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
